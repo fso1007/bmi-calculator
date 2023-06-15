@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html lang="eng">
+    <head>
+      <!--Metadata-->
+      <meta charset="UTF-8">
+      <meta name="description" content="BMI Calculator">
+      <meta name="keywords" content="bmi, calculator">
+      <meta name="author" content="Fabio Oliveira">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>BMI Calculator</title>
+      <!--External Links-->
+      <link rel="stylesheet" href="public/css/main.css">
+    </head>
+    <body>
+      <!--Calculator-->
+      <div class="calculator__container">
+        <h1 class="calculator__title">BMI Calculator</h1>
+        <div class="calculator__name">
+          <label class="calculator__name-title" for="name">Name:</label>
+          <input class="calculator__name-input" type="text" minlength="2" maxlength="20" placeholder="e.g, Mark" required >
+        </div>
+        <div class="calculator__name-input-err" id="nameError" aria-hidden="true">
+          Please enter your name
+        </div>
+        <div class="calculator__height">
+          <label class="calculator__height-title" for="height">Height (m):</label>
+          <input class="calculator__height-input" type="number" min="1" max="5" placeholder="e.g, 1.70" required>
+        </div>
+        <div class="calculator__height-input-err" id="heightError" aria-hidden="true">
+          Please enter your height
+        </div>
+        <div class="calculator__weight">
+          <label class="calculator__weight-title" for="weight">Weight (kg):</label>
+          <input class="calculator__weight-input" type="number" min="1" max="250" placeholder="e.g, 80" required>
+        </div>
+        <div class="calculator__weight-input-err" id="weightError" aria-hidden="true">
+          Please enter your weight
+        </div>
+        <div>
+          <button class="calculator__button">Calculate</button>
+          <button class="calculator__button-clear">Clear</button>
+        </div>
+        <div class="calculator__result"></div>
+      </div>
+      <!--Scripts-->
+      <script src="public/assets/scripts/bmi_calculator.js"></script>
+    </body>
+    
+  </html>
