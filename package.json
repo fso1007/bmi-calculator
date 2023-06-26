@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "sass": "node-sass -w sass -o public/css",
     "live-server": "live-server public --port=3000 --no-browser --watch"
@@ -12,5 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^8.0.0"
+  },
+  "dependencies": {
+    "imask": "^7.0.0"
   }
 }

@@ -1,5 +1,6 @@
+// Export to input_mask.js
+export {username, height, weight};
 
-// Buttons
 const button = document.querySelector('.calculator__button');
 const clearButton = document.querySelector('.calculator__button-clear')
 
@@ -14,11 +15,9 @@ const height = document.querySelector('.calculator__height-input');
 const weight = document.querySelector('.calculator__weight-input');
 const textContainer = document.querySelector('.calculator__result');
 
-
 // Click listeners
 button.addEventListener("click", bmiCalculator);
 clearButton.addEventListener("click", clearFields);
-
 
 // Make it happen
 function bmiCalculator() {
@@ -29,7 +28,6 @@ function bmiCalculator() {
 }
 
 function clearFields() {
-  
   nameInputError.style.display = 'none';
   username.style.border = 'none';
   username.value = '';
@@ -40,10 +38,7 @@ function clearFields() {
   weight.style.border = 'none';
   weight.value = '';
   textContainer.innerHTML = '';
-
 }
-
-
 
 function validateName() {
   if (!username.value || username.value.trim() === '') {
@@ -61,7 +56,6 @@ function validateName() {
     nameInputError.setAttribute('aria-invalid', false);
 
   }
-
 }
 
 function validateHeight() {
@@ -90,7 +84,6 @@ function validateHeight() {
   }
 }
 
-
 function validateWeight() {
   if (!weight.value) {
     weightInputError.style.display = 'block';
@@ -117,7 +110,6 @@ function validateWeight() {
   }
 }
 
-
 function calculateBmi() {
   const bmi = weight.value / (height.value * height.value);
   return bmi.toFixed(2);
@@ -142,10 +134,9 @@ function showResult() {
   return textContainer.innerHTML = textResult;
 }
 
-
-
 // DUVIDAS
 
+// Como nao usar variaveis globais?
 // Como simplificar o código e reduzir repetições? (classes talvez?)
-// Como limitar o uso de 4 caracteres e formatar height, exemplo: "1.70m"
+// Como limitar o uso de 4 caracteres e formatar height, exemplo: "1.70m" - usar RegExp com keypress event?
 // Como limitar o uso de 3 caracteres para o campo weight, exemplo: 110kg

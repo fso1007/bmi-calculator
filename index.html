@@ -24,14 +24,14 @@
         </div>
         <div class="calculator__height">
           <label class="calculator__height-title" for="height">Height (m):</label>
-          <input class="calculator__height-input" type="number" min="1" max="5" placeholder="e.g, 1.70" required>
+          <input class="calculator__height-input" type="text" placeholder="e.g, 1.70" required>
         </div>
         <div class="calculator__height-input-err" id="heightError" aria-hidden="true">
           Please enter your height
         </div>
         <div class="calculator__weight">
           <label class="calculator__weight-title" for="weight">Weight (kg):</label>
-          <input class="calculator__weight-input" type="number" min="1" max="250" placeholder="e.g, 80" required>
+          <input class="calculator__weight-input" type="text" placeholder="e.g, 80" required>
         </div>
         <div class="calculator__weight-input-err" id="weightError" aria-hidden="true">
           Please enter your weight
@@ -43,7 +43,8 @@
         <div class="calculator__result"></div>
       </div>
       <!--Scripts-->
-      <script src="public/assets/scripts/bmi_calculator.js"></script>
+      <script type="module" src="public/assets/scripts/bmi_calculator.js"></script>
+      <script type="module" src="public/assets/scripts/mask_input.js"></script>
     </body>
     
   </html>
