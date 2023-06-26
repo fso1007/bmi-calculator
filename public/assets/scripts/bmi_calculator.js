@@ -67,15 +67,6 @@ function validateHeight() {
 
     throw new Error('Empty height value.');
     
-  } else if (height.value.length > 4) {
-    heightInputError.style.display = 'block';
-    height.style.border = '1px solid red';
-    heightInputError.setAttribute('aria-hidden', true);
-    heightInputError.setAttribute('aria-invalid', false);
-    heightInputError.innerHTML = "Incorrect format! Use e.g: 1.80";
-
-    throw new Error('Incorrect format.');
-
   } else {
     heightInputError.style.display = 'none';
     height.style.border = '1px solid green';
@@ -92,15 +83,6 @@ function validateWeight() {
     weightInputError.setAttribute('aria-invalid', true);
 
     throw new Error('Empty weight value.');
-
-  } else if (weight.value.length > 4) {
-    weightInputError.style.display = 'block';
-    weight.style.border = '1px solid red';
-    weightInputError.setAttribute('aria-hidden', true);
-    weightInputError.setAttribute('aria-invalid', false);
-    weightInputError.innerHTML = "Incorrect format! Use e.g: 70";
-
-    throw new Error('Incorrect format.');
 
   } else {
     weightInputError.style.display = 'none';
