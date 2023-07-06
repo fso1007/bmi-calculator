@@ -1,4 +1,4 @@
-<h1>bmi_calculator</h1>
+<h1>bmi-calculator</h1>
 
 <h2>BMI Calculator example</h2>
 
