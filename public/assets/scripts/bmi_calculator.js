@@ -115,10 +115,3 @@ function showResult() {
 
   return textContainer.innerHTML = textResult;
 }
-
-// DUVIDAS
-
-// Como nao usar variaveis globais?
-// Como simplificar o código e reduzir repetições? (classes talvez?)
-// Como limitar o uso de 4 caracteres e formatar height, exemplo: "1.70m" - usar RegExp com keypress event?
-// Como limitar o uso de 3 caracteres para o campo weight, exemplo: 110kg
