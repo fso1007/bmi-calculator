@@ -1,31 +1,17 @@
-// Export to input_mask.js
-export {username, height, weight};
-
 const button = document.querySelector('.calculator__button');
-const clearButton = document.querySelector('.calculator__button-clear')
-
+const clearButton = document.querySelector('.calculator__button-clear');
 // Errors variables
 const nameInputError = document.querySelector('.calculator__name-input-err');
 const heightInputError = document.querySelector('.calculator__height-input-err');
 const weightInputError = document.querySelector('.calculator__weight-input-err');
-
 // Input variables
 const username = document.querySelector('.calculator__name-input');
 const height = document.querySelector('.calculator__height-input');
 const weight = document.querySelector('.calculator__weight-input');
 const textContainer = document.querySelector('.calculator__result');
-
 // Click listeners
 button.addEventListener("click", bmiCalculator);
 clearButton.addEventListener("click", clearFields);
-
-// Make it happen
-function bmiCalculator() {
-  validateName();
-  validateHeight();
-  validateWeight();
-  showResult()
-}
 
 function clearFields() {
   nameInputError.style.display = 'none';
@@ -46,15 +32,12 @@ function validateName() {
     username.style.border = '1px solid red';
     nameInputError.setAttribute('aria-hidden', false);
     nameInputError.setAttribute('aria-invalid', true);
-
     throw new Error('Empty username.');
-    
   } else {
     nameInputError.style.display = 'none';
     username.style.border = '1px solid green';
     nameInputError.setAttribute('aria-hidden', true);
     nameInputError.setAttribute('aria-invalid', false);
-
   }
 }
 
@@ -64,9 +47,7 @@ function validateHeight() {
     height.style.border = '1px solid red';
     heightInputError.setAttribute('aria-hidden', false);
     heightInputError.setAttribute('aria-invalid', true);
-
     throw new Error('Empty height value.');
-    
   } else {
     heightInputError.style.display = 'none';
     height.style.border = '1px solid green';
@@ -81,9 +62,7 @@ function validateWeight() {
     weight.style.border = '1px solid red';
     weightInputError.setAttribute('aria-hidden', false);
     weightInputError.setAttribute('aria-invalid', true);
-
     throw new Error('Empty weight value.');
-
   } else {
     weightInputError.style.display = 'none';
     weight.style.border = '1px solid green';
@@ -100,18 +79,26 @@ function calculateBmi() {
 function showResult() {
   let bmiValue = calculateBmi();
   let bmiStatus;
-  
   if (bmiValue < 18.5) {
     bmiStatus = 'Underweight';
   } else if (bmiValue >= 18.5 && bmiValue < 25) {
-    bmiStatus = 'Normal Weight ';
+    bmiStatus = 'Normal Weight';
   } else if (bmiValue >= 25 && bmiValue < 30) {
-    bmiStatus = 'Overweight'
+    bmiStatus = 'Overweight';
   } else if (bmiValue > 30) {
-    bmiStatus = 'Obesity'
+    bmiStatus = 'Obesity';
   }
 
   let textResult = `Hi <b>${username.value}</b>, your BMI is <b>${bmiValue}</b> and your category is: <b>${bmiStatus}</b>`;
 
   return textContainer.innerHTML = textResult;
 }
+
+function bmiCalculator() {
+  validateName();
+  validateHeight();
+  validateWeight();
+  showResult();
+}
+// Export to input_mask.js
+export {username, height, weight};
